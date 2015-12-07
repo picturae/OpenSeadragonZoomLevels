@@ -6,7 +6,7 @@ Currently only works with single images!
 
 ## Demo
 
-<!-- http://picturae.github.io/openseadragonselection/#openseadragonrgb -->
+http://picturae.github.io/openseadragonselection/#tabs-zoom-levels
 
 ## Usage
 

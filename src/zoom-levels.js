@@ -50,6 +50,7 @@
 
                 if (zoom !== e.zoom) {
                     viewport.zoomTo(zoom, e.refPoint, e.immediately);
+                    return false; // stop propagation
                 }
             }
         });
