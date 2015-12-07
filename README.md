@@ -2,7 +2,7 @@
 
 An OpenSeadragon plugin to allow restricting the image zoom to specific levels.
 
-Currently only works with single images!
+**Currently only works with single images!**
 
 ## Demo
 
