@@ -69,7 +69,7 @@
                 var imageZoom = tiledImage.viewportToImageZoom(zoom);
                 zoom = tiledImage.imageToViewportZoom(this.levels[this.levels.length - 1]);
                 for (var i = 0; i < this.levels.length; i++) {
-                    if (this.levels[i] > imageZoom) {
+                    if (this.levels[i] >= imageZoom) {
                         zoom = tiledImage.imageToViewportZoom(this.levels[i]);
                         break;
                     }
@@ -94,7 +94,7 @@
                 var imageZoom = tiledImage.viewportToImageZoom(zoom);
                 zoom = tiledImage.imageToViewportZoom(this.levels[0]);
                 for (var i = this.levels.length - 1; i >= 0; i--) {
-                    if (this.levels[i] < imageZoom) {
+                    if (this.levels[i] <= imageZoom) {
                         zoom = tiledImage.imageToViewportZoom(this.levels[i]);
                         break;
                     }
