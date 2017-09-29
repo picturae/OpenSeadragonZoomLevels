@@ -41,9 +41,9 @@
                 zoom = e.zoom;
 
                 if (zoom !== viewport.getHomeZoom()) {
-                    if (zoom < viewport.zoomSpring.current.value) {
+                    if (zoom < viewport.zoomSpring.target.value) {
                         zoom = self.getLowerZoomLevel(zoom);
-                    } else if (zoom > viewport.zoomSpring.current.value) {
+                    } else if (zoom > viewport.zoomSpring.target.value) {
                         zoom = self.getUpperZoomLevel(zoom);
                     }
                 }
