@@ -65,18 +65,18 @@
          */
         getUpperZoomLevel: function(zoom) {
             if ($.isArray(this.levels) && this.levels.length) {
-                var viewport = this.viewer.viewport;
-                var imageZoom = viewport.viewportToImageZoom(zoom);
-                zoom = viewport.imageToViewportZoom(this.levels[this.levels.length - 1]);
+                var tiledImage = this.viewer.world.getItemAt(0);
+                var imageZoom = tiledImage.viewportToImageZoom(zoom);
+                zoom = tiledImage.imageToViewportZoom(this.levels[this.levels.length - 1]);
                 for (var i = 0; i < this.levels.length; i++) {
                     if (this.levels[i] > imageZoom) {
-                        zoom = viewport.imageToViewportZoom(this.levels[i]);
+                        zoom = tiledImage.imageToViewportZoom(this.levels[i]);
                         break;
                     }
                 }
                 return Math.min(
                     zoom,
-                    viewport.getMaxZoom()
+                    this.viewer.viewport.getMaxZoom()
                 );
             }
             return zoom;
@@ -90,18 +90,18 @@
          */
         getLowerZoomLevel: function(zoom) {
             if ($.isArray(this.levels) && this.levels.length) {
-                var viewport = this.viewer.viewport;
-                var imageZoom = viewport.viewportToImageZoom(zoom);
-                zoom = viewport.imageToViewportZoom(this.levels[0]);
+                var tiledImage = this.viewer.world.getItemAt(0);
+                var imageZoom = tiledImage.viewportToImageZoom(zoom);
+                zoom = tiledImage.imageToViewportZoom(this.levels[0]);
                 for (var i = this.levels.length - 1; i >= 0; i--) {
                     if (this.levels[i] < imageZoom) {
-                        zoom = viewport.imageToViewportZoom(this.levels[i]);
+                        zoom = tiledImage.imageToViewportZoom(this.levels[i]);
                         break;
                     }
                 }
                 return Math.max(
                     zoom,
-                    viewport.getMinZoom()
+                    this.viewer.viewport.getMinZoom()
                 );
             }
             return zoom;
