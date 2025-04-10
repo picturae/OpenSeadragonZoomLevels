@@ -5,7 +5,10 @@
   "files": [
     "dist"
   ],
-  "scripts": {},
+  "scripts": {
+    "build": "esbuild --bundle --platform=browser --sourcemap --minify ./src/zoom-levels.js --outfile='./dist/openseadragonzoomlevels.js'",
+    "dev": "yarn build --watch --servedir=."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/picturae/OpenSeadragonZoomLevels.git"
@@ -16,23 +19,15 @@
     "levels"
   ],
   "author": "Petar Petrov",
-  "license": "Apache-2.0,
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/picturae/OpenSeadragonZoomLevels/issues"
   },
   "homepage": "https://github.com/picturae/OpenSeadragonZoomLevels#readme",
   "dependencies": {
+    "openseadragon": "2.4"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-jshint": "^1.11.2",
-    "gulp-load-plugins": "^0.10.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-serve": "^1.2.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.4.2",
-    "gulp-util": "^3.0.6",
-    "jshint-stylish": "^2.0.1"
+    "esbuild": "^0.25.2"
   }
 }
