@@ -1,8 +1,10 @@
 {
-  "name": "OpenSeadragonZoomLevels",
+  "name": "@picturae/openseadragonzoomlevels",
   "version": "1.0.0",
   "description": "An OpenSeadragon plugin to allow restricting the image zoom to specific levels.",
-  "main": "src/zoom-levels.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {},
   "repository": {
     "type": "git",
@@ -14,7 +16,7 @@
     "levels"
   ],
   "author": "Petar Petrov",
-  "license": "MIT",
+  "license": "Apache-2.0,
   "bugs": {
     "url": "https://github.com/picturae/OpenSeadragonZoomLevels/issues"
   },
