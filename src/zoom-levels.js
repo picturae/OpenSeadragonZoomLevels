@@ -22,7 +22,7 @@
      * @param {Object} options
      */
     $.ZoomLevels = function(options) {
-        var self = this;
+        const self = this;
 
         $.extend(true, self, {
             // internal state properties
@@ -34,8 +34,8 @@
 
         sortZoomLevels(options.levels);
 
-        var viewport = self.viewer.viewport;
-        var zoom;
+        const viewport = self.viewer.viewport;
+        let zoom;
         self.viewer.addHandler('zoom', function(e) {
             if (zoom !== e.zoom) {
                 zoom = e.zoom;
@@ -65,10 +65,10 @@
          */
         getUpperZoomLevel: function(zoom) {
             if ($.isArray(this.levels) && this.levels.length) {
-                var viewport = this.viewer.viewport;
-                var imageZoom = viewport.viewportToImageZoom(zoom);
+                const viewport = this.viewer.viewport;
+                const imageZoom = viewport.viewportToImageZoom(zoom);
                 zoom = viewport.imageToViewportZoom(this.levels[this.levels.length - 1]);
-                for (var i = 0; i < this.levels.length; i++) {
+                for (let i = 0; i < this.levels.length; i++) {
                     if (this.levels[i] > imageZoom) {
                         zoom = viewport.imageToViewportZoom(this.levels[i]);
                         break;
@@ -90,10 +90,10 @@
          */
         getLowerZoomLevel: function(zoom) {
             if ($.isArray(this.levels) && this.levels.length) {
-                var viewport = this.viewer.viewport;
-                var imageZoom = viewport.viewportToImageZoom(zoom);
+                const viewport = this.viewer.viewport;
+                const imageZoom = viewport.viewportToImageZoom(zoom);
                 zoom = viewport.imageToViewportZoom(this.levels[0]);
-                for (var i = this.levels.length - 1; i >= 0; i--) {
+                for (let i = this.levels.length - 1; i >= 0; i--) {
                     if (this.levels[i] < imageZoom) {
                         zoom = viewport.imageToViewportZoom(this.levels[i]);
                         break;
