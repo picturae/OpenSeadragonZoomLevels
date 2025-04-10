@@ -1,6 +1,6 @@
 {
   "name": "@picturae/openseadragonzoomlevels",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An OpenSeadragon plugin to allow restricting the image zoom to specific levels.",
   "files": [
     "dist"
