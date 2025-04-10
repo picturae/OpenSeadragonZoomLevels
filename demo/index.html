@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OpenSeadragonZoomLevels demo</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0/build/openseadragon/openseadragon.min.js"></script>
+  <script src="../dist/openseadragonzoomlevels.js"></script>
+</head>
+<body>
+<div id="openseadragon1" style="width: 1200px; height: 1000px;"></div>
+
+<div id="output"></div>
+
+<script>
+const viewer = OpenSeadragon({
+    id: 'openseadragon1',
+    prefixUrl: '../images/',
+    tileSources: 'https://openseadragon.github.io/example-images/highsmith/highsmith.dzi',
+    zoomPerScroll: 1.00001, // so we don't skip levels
+});
+
+const outputElement = document.getElementById('output');
+
+viewer.zoomLevels({
+    levels: [
+        0.05, 0.0625, 0.0833, 0.125, 0.167, 0.25, 0.333, 0.5, 0.666, 0.75,
+        1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.5, 4,
+    ],
+});
+
+viewer.addHandler('zoom', event => {
+    outputElement.textContent = `Zoom level: ${event.zoom}`;
+});
+
+</script>
+</body>
+</html>
